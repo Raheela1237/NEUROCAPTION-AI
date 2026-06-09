@@ -237,6 +237,7 @@ async function analyzeImageWithGemini(imageBase64) {
 async function generateAICaptions(imageBase64, platform, mode, language, category, emojiIntensity, isRoast, analysis) {
     try {
         const imageData = imageBase64.split(',')[1];
+        if (!imageData) return null;
         
         // Build a rich prompt with image analysis
         const analysisText = analysis ? `
