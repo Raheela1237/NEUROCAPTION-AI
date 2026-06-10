@@ -479,4 +479,13 @@ app.get('/api/health', (req, res) => {
     });
 });
 
+// Local development ke liye
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running on http://localhost:${PORT}`);
+    });
+}
+
+// Vercel serverless ke liye
 export default app;
