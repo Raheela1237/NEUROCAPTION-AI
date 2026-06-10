@@ -448,7 +448,7 @@
     
     <script>
         // USE YOUR LOCAL SERVER - THIS IS THE IMPORTANT FIX!
-        const BACKEND_URL = 'http://localhost:3000/api/generate';
+const BACKEND_URL = '/api/generate';
         
         let currentImageBase64 = null;
         let currentPlatform = 'instagram';
@@ -482,7 +482,7 @@
         
         async function checkServerStatus() {
             try {
-                const response = await fetch('http://localhost:3000/api/health');
+        const response = await fetch('/api/health');
                 if (response.ok) {
                     showToast('✅ Server connected! Ready to generate captions');
                 }
