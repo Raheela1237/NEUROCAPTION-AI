@@ -447,8 +447,8 @@
     </div>
     
     <script>
-        // ✅ CHANGED: Vercel serverless URL - NO localhost
-        const BACKEND_URL = '/api/generate';
+        // USE YOUR LOCAL SERVER - THIS IS THE IMPORTANT FIX!
+        const BACKEND_URL = 'http://localhost:3000/api/generate';
         
         let currentImageBase64 = null;
         let currentPlatform = 'instagram';
@@ -482,8 +482,7 @@
         
         async function checkServerStatus() {
             try {
-                // ✅ CHANGED: Vercel serverless URL - NO localhost
-                const response = await fetch('/api/health');
+                const response = await fetch('http://localhost:3000/api/health');
                 if (response.ok) {
                     showToast('✅ Server connected! Ready to generate captions');
                 }
@@ -707,7 +706,7 @@
                 }
             } catch (error) {
                 console.error('Error:', error);
-                showToast('❌ Server error! Make sure server is running');
+                showToast('❌ Server error! Make sure server is running on port 3000');
             } finally {
                 document.getElementById('generateBtn').disabled = false;
                 document.getElementById('roastBtn').disabled = false;
