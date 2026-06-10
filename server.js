@@ -479,9 +479,4 @@ app.get('/api/health', (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`\n🚀 NeuroCaption AI Server Running!`);
-    console.log(`📍 http://localhost:${PORT}`);
-    console.log(`🔑 Gemini API: ${GEMINI_API_KEY ? '✅ Configured' : '❌ Missing'}`);
-    console.log(`💡 Ready to generate unique captions!\n`);
-});
+export default app;
